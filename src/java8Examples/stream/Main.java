@@ -3,6 +3,7 @@ package java8Examples.stream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -32,5 +33,13 @@ public class Main {
 							return (x % 2 == 0);
 						}
 				).collect(Collectors.toList());
+		
+		
+		// reduce function enforce lambda function to take 2 input parameters.
+		// reduce function return a single entity after reducing the whole list.
+		Optional<Integer> totalSum = inputList.stream().reduce((i, j) -> {
+			return i+j;
+		});
 	}
 }
+
